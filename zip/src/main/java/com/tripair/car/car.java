@@ -12,11 +12,17 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "car")
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class car {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -30,4 +36,15 @@ public class car {
     user user;
 
     float valorCar;
+
+    public void addTrip(trip trip) {
+        trips.add(trip);
+        this.valorCar += trip.getValor(); // Atualiza o valor total do carrinho com a nova viagem
+    }
+    
+    public void removeTrip(trip trip) {
+        trips.remove(trip);
+        this.valorCar -= trip.getValor(); // Atualiza o valor total ao remover a viagem
+    }
+    
 }

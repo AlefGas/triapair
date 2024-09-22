@@ -1,7 +1,7 @@
-INSERT INTO users (name, email, password, avatar, created_at, updated_at) 
+INSERT INTO users (name, email, password, created_at, updated_at) 
 VALUES 
-('John Doe', 'john.doe@example.com', 'hashed_password_123', 'avatar_url_1', NOW(), NOW()),
-('Jane Smith', 'jane.smith@example.com', 'hashed_password_456', 'avatar_url_2', NOW(), NOW());
+('John Doe', 'john.doe@example.com', 'hashed_password_123', NOW(), NOW()),
+('Jane Smith', 'jane.smith@example.com', 'hashed_password_456', NOW(), NOW());
 
 -- Inserção de dados na tabela car
 INSERT INTO car (user_id, valor_car) 

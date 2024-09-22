@@ -25,7 +25,6 @@ public class user {
     String name;
     String email;
     String password;
-    String avatar;
     LocalDateTime createdAt;
     LocalDateTime updatedAt;
 
